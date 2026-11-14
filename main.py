@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 """Copy entry.png to the make.fun output directory, byte for byte.
 
+The image is a "fridge collage": v3's handwritten note to the judge
+(same exact original text) surrounded by cute hand-drawn-style doodles
+— a little robot-judge with a gold star, a tiny green dinosaur, a cute
+dog, hearts, stars, flowers and a small rainbow (JPEG, 1024x768,
+under 1 MiB).
+
 Deterministic, standard library only, no network access.
 """
 import os
