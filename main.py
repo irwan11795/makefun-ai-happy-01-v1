@@ -24,6 +24,10 @@ DEST = OUTPUT_DIR / "entry.png"
 
 
 def main() -> None:
+    if not SOURCE.is_file():
+        raise FileNotFoundError(f"source image missing: {SOURCE} (entry.png must sit next to main.py)")
+    if SOURCE.stat().st_size == 0:
+        raise ValueError(f"source image is empty: {SOURCE}")
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(SOURCE, DEST)
     assert DEST.read_bytes() == SOURCE.read_bytes(), "byte verification failed: output differs from entry.png"
